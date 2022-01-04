@@ -20,22 +20,30 @@ Python 3.8.10
 ```
 $ python3 -m venv {name}
 ```
-3. Activate your virtual environment  
+3. Activate your virtual environment.  
 ```
 $ source {name}/bin/activate
 ```
-4. Check your pip  
+4. Check your pip.  
 ```
 $ pip3 -V
 pip 20.0.2 from /home/tiwan/PJATK/SUML/SUML_Iwanowski_Farbowski/venv/lib/python3.8/site-packages/pip (python 3.8)
 ```
-5. install requirements
+5. Install requirements.
 ```
 $ pip3 install -r requirements.txt
 ```
 
 ### Requirements:
 * django  
+
+## How to launch the application?  
+1. Clone this repository.
+2. Enter the `/SUML_Iwanowski_Farbowski/SUML_IF_Project` directory.
+3. Start the server.  
+```
+$ python manage.py runserver
+```
 
 #### Grupa 3
 Piotr Farbowski  
