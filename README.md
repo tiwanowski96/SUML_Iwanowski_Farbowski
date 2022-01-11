@@ -1,8 +1,8 @@
 # SUML - Projekt Końcowy
 ## The purpose of the project
 Diabetes is among the most prevalent chronic diseases in the world, it's a serious chronic disease in which individuals lose the ability to effectively regulate levels of glucose in the blood, and can lead to reduced quality of life and life expectancy or even predecease.
-1.What risk factors are most predictive of diabetes risk?
-2.Can we predict the diabetes risk based on factors?
+-What risk factors are most predictive of diabetes risk?
+-Can we predict the diabetes risk based on factors?
 
 ## Django
 The project is built on the Django framework.
