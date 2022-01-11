@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+
 class Diabetes(models.Model):
     sick = models.BooleanField(null=True)
     SEX = [
@@ -18,7 +19,7 @@ class Diabetes(models.Model):
     ]
     high_blood_preasure = models.IntegerField(
         choices=HIGH_BP,
-        null=True    
+        null=True
     )
     CHOLESTEROL = [
         (1, 'HighCholesterol'),
@@ -30,7 +31,7 @@ class Diabetes(models.Model):
     )
     bmi = models.IntegerField(null=True)
     smoker = models.BooleanField(null=True)
-    stroke = models.BooleanField(null=True)    
+    stroke = models.BooleanField(null=True)
     heart_disease_or_attack = models.BooleanField(null=True)
     physical_activity = models.BooleanField(null=True)
     heavy_alcohol_consumption = models.BooleanField(null=True)
@@ -72,6 +73,6 @@ class Diabetes(models.Model):
         choices=EDUCATION,
         null=True
     )
-    
+
     def __str__(self):
         return self.sick
