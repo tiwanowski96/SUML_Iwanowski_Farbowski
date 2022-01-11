@@ -120,6 +120,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.test_PF
+test_PF/
 
 # Spyder project settings
 .spyderproject
