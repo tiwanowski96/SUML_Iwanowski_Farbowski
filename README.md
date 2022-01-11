@@ -1,4 +1,6 @@
 # SUML - Projekt Końcowy
+## The purpose of the project
+Diabetes is among the most prevalent chronic diseases in the world, it's a serious chronic disease in which individuals lose the ability to effectively regulate levels of glucose in the blood, and can lead to reduced quality of life and life expectancy or even predecease.
 
 ## Django
 The project is built on the Django framework.
