@@ -52,3 +52,4 @@ $ python manage.py runserver
 #### Grupa 3
 Piotr Farbowski  
 Tomasz Iwanowski
+- https://trello.com/b/B58ciuVO/grupa-3
