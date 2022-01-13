@@ -1,0 +1,65 @@
+{% extends "diviner/base.html" %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                <strong>{{message|safe}}</strong>
+            </div>
+        {% endfor %}
+    {% else %}
+        {{order}}
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="file1"> Upload a file</label>
+            <input type="file" id="file1" name="file"><br>
+            <br>
+            <small>Only accepts CSV files</small>
+            <button type="submit">Upload</button>
+        </form>
+    {% endif %}
+    <br>
+    <h3>Diabetes data:</h3>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>sick</th>
+            <th>sex</th>
+            <th>age</th>
+            <th>high_blood_preasure</th>
+            <th>cholesterol</th>
+            <th>bmi</th>
+            <th>smoker</th>
+            <th>stroke</th>
+            <th>heart_disease_or_attack</th>
+            <th>physical_activity</th>
+            <th>heavy_alcohol_consumption</th>
+            <th>healthcare</th>
+            <th>general_health_feeling</th>
+            <th>mental_health_feeling</th>
+            <th>physical_health_feeling</th>
+            <th>education</th>
+        </tr>
+    {% for diabetic in diabetes %}
+        <tr>
+            <td>{{diabetic.id}}</td>
+            <td>{{diabetic.sick}}</td>
+            <td>{{diabetic.get_sex_display}}</td>
+            <td>{{diabetic.age}}</td>
+            <td>{{diabetic.get_high_blood_preasure_display}}</td>
+            <td>{{diabetic.get_cholesterol_display}}</td>
+            <td>{{diabetic.bmi}}</td>
+            <td>{{diabetic.smoker}}</td>
+            <td>{{diabetic.stroke}}</td>
+            <td>{{diabetic.heart_disease_or_attack}}</td>
+            <td>{{diabetic.physical_activity}}</td>
+            <td>{{diabetic.heavy_alcohol_consumption}}</td>
+            <td>{{diabetic.healthcare}}</td>
+            <td>{{diabetic.get_general_health_feeling_display}}</td>
+            <td>{{diabetic.mental_health_feeling}}</td>
+            <td>{{diabetic.physical_health_feeling}}</td>
+            <td>{{diabetic.get_education_display}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock content %}

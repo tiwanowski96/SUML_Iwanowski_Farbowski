@@ -1,1 +1,2 @@
-from .test_view import *
+from .home import *
+from .upload_form import *

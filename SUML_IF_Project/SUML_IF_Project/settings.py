@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'SUML_IF_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'diviner.sqlite3',
+        'NAME': BASE_DIR / 'diviner2.sqlite3',
     }
 }
 
