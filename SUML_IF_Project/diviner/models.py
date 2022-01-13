@@ -5,7 +5,11 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Diabetes(models.Model):
     sick = models.BooleanField(
         null=False,
-        default = False
+        default = False,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(1)
+        ]
     )
     SEX = [
         (1, 'female'),
@@ -14,7 +18,11 @@ class Diabetes(models.Model):
     sex = models.IntegerField(
         null=False,
         choices=SEX,
-        default = 1
+        default = 1,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(1)
+        ]
     )
     age = models.IntegerField(
         null=False,
@@ -27,7 +35,11 @@ class Diabetes(models.Model):
     high_blood_preasure = models.IntegerField(
         choices=HIGH_BP,
         null=False,
-        default=0
+        default=0,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(1)
+        ]
     )
     CHOLESTEROL = [
         (1, 'HighCholesterol'),
@@ -36,9 +48,27 @@ class Diabetes(models.Model):
     cholesterol = models.IntegerField(
         choices=CHOLESTEROL,
         null=False,
-        default=0
+        default=0,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(1)
+        ]
     )
-    bmi = models.IntegerField(null=False, default=20)
+    # BMI = [
+    #     (range(0,18),'underweight'),
+    #     (range(19,25),'healthy weight'),
+    #     (range(26,30),'overweight'),
+    #     (range(31,40),'obese')
+    # ]
+    bmi = models.IntegerField(
+        # choices=BMI,
+        null=False,
+        default=20,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(40)
+        ]
+    )
     smoker = models.BooleanField(null=False, default = False)
     stroke = models.BooleanField(null=False, default = False)
     heart_disease_or_attack = models.BooleanField(null=False, default = False)
@@ -55,7 +85,11 @@ class Diabetes(models.Model):
     general_health_feeling = models.IntegerField(
         choices=GENERAL_HEALTH_FEELING,
         null=False,
-        default=3
+        default=3,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(5)
+        ]
     )
     mental_health_feeling = models.IntegerField(
         default=0,
@@ -82,7 +116,11 @@ class Diabetes(models.Model):
     education = models.IntegerField(
         choices=EDUCATION,
         null=False,
-        default=5
+        default=5,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(6)
+        ]
     )
 
     def __str__(self):
