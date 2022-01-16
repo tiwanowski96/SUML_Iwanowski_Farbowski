@@ -18,12 +18,30 @@
             tr:nth-child(even) {
               background-color: #dddddd;
             }
+
+            .topnav a {
+                float: left;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav {
+                overflow: hidden;
+            }
         </style>
     </head>
 
     <body>
         <h1><a href="{% url 'home' %}">Diabetes Diviner</a></h1>
-        
-    {% block content %}{% endblock content %}
+        <hr>
+        <div class="topnav">
+            <a href="{% url 'upload_form' %}">Upload a file</a>
+            <a href="{% url 'add_diabetes' %}">Add diabetes data</a>        
+        </div>
+        <hr>
+        <br>
+        {% block content %}{% endblock content %}
     </body>
 </html>

@@ -1,0 +1,21 @@
+{% extends "diviner/base.html" %}
+
+{% block content %}
+    <h3>ID: {{ diabetic.id }}</h3>
+    <p>Sick: {{ diabetic.sick }}</p>
+    <p>Sex: {{ diabetic.sex }}</p>
+    <p>Age: {{ diabetic.age }}</p>
+    <p>Blood preasure: {{ diabetic.high_blood_preasure }}</p>
+    <p>Cholesterol: {{ diabetic.cholesterol }}</p>
+    <p>BMI: {{ diabetic.bmi }}</p>
+    <p>Smoker: {{ diabetic.smoker }}</p>
+    <p>Stroke: {{ diabetic.stroke }}</p>
+    <p>Heart disease or attack: {{ diabetic.heart_disease_or_attack }}</p>
+    <p>Physical activity: {{ diabetic.physical_activity }}</p>
+    <p>Heavy alcohol consumption: {{ diabetic.heavy_alcohol_consumption }}</p>
+    <p>Healthcare: {{ diabetic.healthcare }}</p>
+    <p>General health feeling: {{ diabetic.general_health_feeling }}</p>
+    <p>Mental health feeling: {{ diabetic.mental_health_feeling }}</p>
+    <p>Physical health feeling: {{ diabetic.physical_health_feeling }}</p>
+    <p>Education: {{ diabetic.education }}</p>
+{% endblock content %}

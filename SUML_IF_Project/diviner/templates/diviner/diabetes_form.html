@@ -1,0 +1,28 @@
+{% extends "diviner/base.html" %}
+
+{% block content %}
+<div>
+        <h3 class="headtext">Add diabetic data:</h3>
+        <form action="" method="POST">{% csrf_token %}
+            <p>Sick: {{ form.sick }}</p>
+            <p>Sex: {{ form.sex }}</p>
+            <p>Age: {{ form.age }}</p>
+            <p>Blood preasure: {{ form.high_blood_preasure }}</p>
+            <p>Cholesterol: {{ form.cholesterol }}</p>
+            <p>BMI: {{ form.bmi }}</p>
+            <p>Smoker: {{ form.smoker }}</p>
+            <p>Stroke: {{ form.stroke }}</p>
+            <p>Heart disease or attack: {{ form.heart_disease_or_attack }}</p>
+            <p>Physical activity: {{ form.physical_activity }}</p>
+            <p>Heavy alcohol consumption: {{ form.heavy_alcohol_consumption }}</p>
+            <p>Healthcare: {{ form.healthcare }}</p>
+            <p>General health feeling: {{ form.general_health_feeling }}</p>
+            <p>Mental health feeling: {{ form.mental_health_feeling }}</p>
+            <p>Physical health feeling: {{ form.physical_health_feeling }}</p>
+            <p>Education: {{ form.education }}</p>
+
+            <br>{{ form.errors }}<br>
+            <input class="toggle" type="submit" value="&nbsp;Submit&nbsp;">
+        </form>
+</div>
+{% endblock content %}
