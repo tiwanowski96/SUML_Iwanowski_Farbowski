@@ -1,0 +1,36 @@
+{% extends "diviner/base.html" %}
+
+{% block content %}
+<div>
+        <h3 class="headtext">Add patient's data for prediction:</h3>
+        <form action="" method="POST">{% csrf_token %}
+            <p>Sex: {{ form.sex }}</p>
+            <p>Age: {{ form.age }}</p>
+            <p>Blood preasure: {{ form.high_blood_preasure }}</p>
+            <p>Cholesterol: {{ form.cholesterol }}</p>
+            <p>BMI: {{ form.bmi }}</p>
+            <p>Smoker: {{ form.smoker }}</p>
+            <small>Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes] 0 = no 1 = yes</small><br>
+            <p>Stroke: {{ form.stroke }}</p>
+            <small>(Ever told) you had a stroke. 0 = no 1 = yes</small><br>
+            <p>Heart disease or attack: {{ form.heart_disease_or_attack }}</p>
+            <small>coronary heart disease (CHD) or myocardial infarction (MI) 0 = no 1 = yes</small><br>
+            <p>Physical activity: {{ form.physical_activity }}</p>
+            <small>physical activity in past 30 days - not including job 0 = no 1 = yes</small><br>
+            <p>Heavy alcohol consumption: {{ form.heavy_alcohol_consumption }}</p>
+            <small>Heavy drinkers (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week) 0 = no 1 = yes</small><br>
+            <p>Healthcare: {{ form.healthcare }}</p>
+            <small>Have any kind of health care coverage, including health insurance, prepaid plans such as HMO, etc. 0 = no 1 = yes</small><br>
+            <p>General health feeling: {{ form.general_health_feeling }}</p>
+            <small>Would you say that in general your health is: scale 1-5 1 = excellent 2 = very good 3 = good 4 = fair 5 = poor</small><br>
+            <p>Mental health feeling: {{ form.mental_health_feeling }}</p>
+            <small>Now thinking about your mental health, which includes stress, depression, and problems with emotions, for how many days during the past 30 days was your mental health not good? scale 1-30 days</small><br>
+            <p>Physical health feeling: {{ form.physical_health_feeling }}</p>
+            <small>Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good? scale 1-30 days</small><br>
+            <p>Education: {{ form.education }}</p>
+
+            <br>{{ form.errors }}<br>
+            <input class="toggle" type="submit" value="&nbsp;Submit&nbsp;">
+        </form>
+</div>
+{% endblock content %}

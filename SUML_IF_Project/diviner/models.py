@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Diabetes(models.Model):
     sick = models.BooleanField(
         null=False,
-        default = False,
+        default=False,
         validators=[
             MinValueValidator(0),
             MaxValueValidator(1)
@@ -69,12 +69,12 @@ class Diabetes(models.Model):
             MaxValueValidator(40)
         ]
     )
-    smoker = models.BooleanField(null=False, default = False)
-    stroke = models.BooleanField(null=False, default = False)
-    heart_disease_or_attack = models.BooleanField(null=False, default = False)
-    physical_activity = models.BooleanField(null=False, default = False)
-    heavy_alcohol_consumption = models.BooleanField(null=False, default = False)
-    healthcare = models.BooleanField(null=False, default = False)
+    smoker = models.BooleanField(default = False)
+    stroke = models.BooleanField(default = False)
+    heart_disease_or_attack = models.BooleanField(default = False)
+    physical_activity = models.BooleanField(default = False)
+    heavy_alcohol_consumption = models.BooleanField(default = False)
+    healthcare = models.BooleanField(default = False)
     GENERAL_HEALTH_FEELING = [
         (1, 'excellent'),
         (2, 'very good'),
