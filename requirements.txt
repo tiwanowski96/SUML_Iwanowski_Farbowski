@@ -1,3 +1,4 @@
 django
 pylint
 autopep8
+psycopg2>=2.8
