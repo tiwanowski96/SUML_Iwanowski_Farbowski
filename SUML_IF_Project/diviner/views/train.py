@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from ..forms import DiabeticPredictionForm
 from ..models import Diabetes
-'''
+
 import pandas as pd
 import numpy as np
 import matplotlib as plt
@@ -20,12 +20,13 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
-'''
+
 
 class DiabeticTrainView(View):
- def get(self, request):
-    return render(request, 'diviner/train.html')
-class Trains:
+    def get(self, request):
+        result=self.hello(self)
+        ctx={'result': result}
+        return render(request, 'diviner/train.html', ctx)
     def  trainModel():
         all_entries = Diabetes.objects.all()
         all_entries.columns  
@@ -33,8 +34,8 @@ class Trains:
                 "physical_activity","heavy_alcohol_consumption","healthcare","general_health_feeling","mental_health_feeling",
                 "physical_health_feeling","education",]
         data = all_entries[cols].copy()
-        encoder = LabelEncoder()
-        data.loc[:,"sex"] = encoder.fit_transform(data.loc[:,"sex"])
+        # encoder = LabelEncoder()
+        # data.loc[:,"sex"] = encoder.fit_transform(data.loc[:,"sex"])
         # male = 1, female = 0
         y = data.iloc[:,0] #  - zmienna, którą będziemy chcieli przewidzieć
         x = data.iloc[:,1:15] # zmienne na podstawie, których chcemy przewidzieć
@@ -66,6 +67,8 @@ class Trains:
         forest, lreg, tree = model(X_train,y_train)
 # uzyskujemy dzięki temu informacje dotyczącą dokładności modelu 
         return forest, lreg, tree
+    def hello(self,request):
+        return 'Piotrek'
 
   
     
