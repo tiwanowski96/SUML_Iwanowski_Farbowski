@@ -7,6 +7,8 @@ from ..models import Diabetes
 def upload_form(request):
     template = 'diviner/upload_form.html'
     data = Diabetes.objects.all()
+    # TODO
+    # Diabetes.objects.all().delete()
 
     prompt = {
         'csv': 'Diabetes CSV',
