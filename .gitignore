@@ -120,6 +120,7 @@ celerybeat.pid
 env/
 venv/
 ENV/
+PF_develop/
 env.bak/
 venv.bak/
 .test_PF
