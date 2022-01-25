@@ -114,6 +114,10 @@ celerybeat.pid
 
 /data
 
+# Application files
+diabetes.csv
+model.sv
+
 # Environments
 .env
 .venv
