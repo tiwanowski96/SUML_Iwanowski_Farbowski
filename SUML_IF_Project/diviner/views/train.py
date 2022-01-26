@@ -106,7 +106,9 @@ class DiabeticTrainView(View):
         data = all_entries[cols].copy()
         data.isnull().any()
         y = data.iloc[:,0] #  - zmienna, którą będziemy chcieli przewidzieć
-        x = data.iloc[:,1:15] # zmienne na podstawie, których chcemy przewidzieć
+        print('y %s' % y)
+        x = data.iloc[:,1:16] # zmienne na podstawie, których chcemy przewidzieć
+        print('x %s' % x)
         X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
         
         return X_train, X_test, y_train, y_test
