@@ -25,8 +25,7 @@ The most important functionality of the project is to predict, based on the avai
 ## Django
 The project is built on the Django framework.
 
-Documentation: https://docs.djangoproject.com/en/4.0/ 
-
+Documentation: https://docs.djangoproject.com/en/4.0/  
 Installation guide: https://docs.djangoproject.com/en/4.0/intro/install/
 
 ## Requirements
