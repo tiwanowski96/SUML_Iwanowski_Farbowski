@@ -41,7 +41,7 @@ Installation guide: https://docs.djangoproject.com/en/4.0/intro/install/
 ## Prepare development environment (1st option - Docker)
 1. Check if you have docker installed, if not you need to install it.
 
-Installation: https://docs.docker.com/get-docker/
+Installation: https://docs.docker.com/get-docker/  
 Docker documetation: https://docs.docker.com/
 
 2. Move to the main directory `/SUML_Iwanowski_Farbowski` and run below command:
