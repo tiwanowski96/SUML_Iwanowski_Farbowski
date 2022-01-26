@@ -106,11 +106,10 @@ class DiabeticTrainView(View):
         data = all_entries[cols].copy()
         data.isnull().any()
         y = data.iloc[:,0] #  - zmienna, którą będziemy chcieli przewidzieć
-        print('y %s' % y)
+        print(f'y: {y}')
         x = data.iloc[:,1:16] # zmienne na podstawie, których chcemy przewidzieć
-        print('x %s' % x)
+        print(f'x: {x}')
         X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
-        
         return X_train, X_test, y_train, y_test
 
 
@@ -129,7 +128,3 @@ class DiabeticTrainView(View):
         # print("Drzewa decyzyjne: {0}".format(tree.score(X_train,y_train)) )
 
         return forest, lreg, tree
-
-  
-    
-

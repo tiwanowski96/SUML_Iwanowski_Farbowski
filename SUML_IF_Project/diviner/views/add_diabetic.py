@@ -1,9 +1,12 @@
+"""System module."""
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from ..models import Diabetes
 
 
 class DiabetesAddView(CreateView):
+    '''View of adding diabetic data'''
+
     model = Diabetes
     fields = [
         'sick',
@@ -23,5 +26,6 @@ class DiabetesAddView(CreateView):
         'physical_health_feeling',
         'education'
     ]
+
     def get_success_url(self):
         return reverse_lazy('diabetic', kwargs={'id': self.object.id})
