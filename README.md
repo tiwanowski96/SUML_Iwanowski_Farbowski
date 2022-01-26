@@ -9,7 +9,7 @@ Diabetes is among the most prevalent chronic diseases in the world, it's a serio
 Three models have been calculated:
 * Random Forest
 * Logistic Regression
-* Decision Tree
+* Decision Tree  
 
 By switching to the "Train model" view, the application creates new models each time based on the objects in the Diabetes table. The application is responsible for the selection of the appropriate model, on its basis, prediction is calculated.
 
@@ -17,14 +17,16 @@ By switching to the "Train model" view, the application creates new models each 
 
 The user can enter data in two ways:
 * by adding a csv file with data
-* by filling out the patient's form
+* by filling out the patient's form  
+
 The user can re-train the model at any time by going to the train model view.
 The most important functionality of the project is to predict, based on the available data, the likelihood of a patient suffering from diabetes.
 
 ## Django
 The project is built on the Django framework.
 
-Documentation: https://docs.djangoproject.com/en/4.0/  
+Documentation: https://docs.djangoproject.com/en/4.0/ 
+
 Installation guide: https://docs.djangoproject.com/en/4.0/intro/install/
 
 ## Requirements
@@ -81,7 +83,7 @@ $ pip3 install -r requirements.txt
 $ python manage.py runserver
 ```
 
-### Data
+## Data
 
 The data used by us in the project come from the kaddle data set:
 
