@@ -117,6 +117,8 @@ celerybeat.pid
 # Application files
 diabetes.csv
 model.sv
+plot.png
+SUML_IF_Project\diviner\static\diviner\plot.png
 
 # Environments
 .env
