@@ -1,4 +1,4 @@
-# SUML - Iwanowski Farbowski
+# Diviner (SUML - Iwanowski Farbowski)
 ## The purpose of the project
 Diabetes is among the most prevalent chronic diseases in the world, it's a serious chronic disease in which individuals lose the ability to effectively regulate levels of glucose in the blood, and can lead to reduced quality of life and life expectancy or even predecease.
 - What risk factors are most predictive of diabetes risk?
@@ -10,6 +10,7 @@ Three models have been calculated:
 * Random Forest
 * Logistic Regression
 * Decision Tree
+
 By switching to the "Train model" view, the application creates new models each time based on the objects in the Diabetes table. The application is responsible for the selection of the appropriate model, on its basis, prediction is calculated.
 
 ## Description of the functionality
