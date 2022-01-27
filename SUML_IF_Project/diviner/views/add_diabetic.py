@@ -27,5 +27,6 @@ class DiabetesAddView(CreateView):
         'education'
     ]
 
+
     def get_success_url(self):
         return reverse_lazy('diabetic', kwargs={'id': self.object.id})

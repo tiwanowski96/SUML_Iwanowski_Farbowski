@@ -18,6 +18,7 @@ class DiabeticPredictionView(View):
         ctx = {'form': form}
         return render(request, 'diviner/diabetic_prediction.html', ctx)
 
+
     def post(self, request):
         '''Predicting the patient's disease based on the data provided in the form'''
         form = DiabeticPredictionForm(data=request.POST)
@@ -109,6 +110,7 @@ class DiabeticPredictionView(View):
             field = 0
 
         return field
+
 
     def prepare_test_data(self, request):
         '''Preparation of test data based on the csv file'''

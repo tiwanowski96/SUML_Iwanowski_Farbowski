@@ -5,9 +5,11 @@ from ..models import Diabetes
 
 
 def upload_form(request):
+    '''csv form'''
     template = 'diviner/upload_form.html'
     data = Diabetes.objects.all()
-    # TODO
+    
+    # Uncomment below line if you want to remove data from Diabetes model
     # Diabetes.objects.all().delete()
 
     prompt = {

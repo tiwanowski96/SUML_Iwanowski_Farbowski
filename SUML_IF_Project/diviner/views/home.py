@@ -8,14 +8,16 @@ from django.views.generic import View
 from io import BytesIO
 
 class HomeView(View):
+    '''Home page view'''
 
     def get(self, request):        
-        
+        '''Home page data'''
         plot = self.plot(self)
         return render(request, 'diviner/home.html')
 
+
     def plot(self, request):
-        
+        '''render plot'''
         try:
             all_entries = pd.read_csv('diabetes.csv')
             all_entries.columns
@@ -32,4 +34,3 @@ class HomeView(View):
             return plot_png
         except IOError:
             return
-        

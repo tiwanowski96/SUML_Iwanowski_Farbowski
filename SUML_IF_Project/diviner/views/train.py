@@ -1,33 +1,33 @@
-from pyexpat import model
+import csv
+import os
+import pickle
+import numpy as np
+import matplotlib as plt
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import View
-from ..forms import DiabeticPredictionForm
-from ..models import Diabetes
-
-import csv
-import pandas as pd
-import numpy as np
-import matplotlib as plt
-import os
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pickle
-
-from sklearn.metrics import classification_report
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from pyexpat import model
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
+
+from ..forms import DiabeticPredictionForm
+from ..models import Diabetes
 
 
 class DiabeticTrainView(View):
-
+    '''Train diabetic model view'''
     def get(self, request):
-
+        '''prepare data for the view'''
         if not Diabetes.objects.exists():
             return render(request, 'diviner/model_empty.html')
 
@@ -75,7 +75,7 @@ class DiabeticTrainView(View):
 
 
     def export_csv(self, request):
-
+        '''create csv file of diabetes data'''
         diabetes = Diabetes.objects.all()
 
         try:
@@ -96,8 +96,9 @@ class DiabeticTrainView(View):
             writer.writerow(row)
         return csv_file
 
-    def trainModel(self, request):
 
+    def trainModel(self, request):
+        '''train diabetics model'''
         all_entries = pd.read_csv('diabetes.csv')
         all_entries.columns
         cols = ["sick","sex","age","high_blood_preasure","cholesterol","bmi","smoker","stroke","heart_disease_or_attack",
@@ -114,7 +115,7 @@ class DiabeticTrainView(View):
 
 
     def model(self, request, X_train, y_train):
-
+        '''return diabetics models'''
         forest = RandomForestClassifier( n_estimators=10, random_state=0)
         forest.fit(X_train,y_train)
         # print("Las: {0}".format(forest.score(X_train,y_train)) )
