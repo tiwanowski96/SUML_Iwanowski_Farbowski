@@ -54,14 +54,7 @@ class Diabetes(models.Model):
             MaxValueValidator(1)
         ]
     )
-    # BMI = [
-    #     (range(0,18),'underweight'),
-    #     (range(19,25),'healthy weight'),
-    #     (range(26,30),'overweight'),
-    #     (range(31,40),'obese')
-    # ]
     bmi = models.IntegerField(
-        # choices=BMI,
         null=False,
         default=20,
         validators=[

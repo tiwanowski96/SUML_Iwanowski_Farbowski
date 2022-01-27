@@ -92,7 +92,7 @@ To quote the data owner:
 
 "The Behavioral Risk Factor Surveillance System (BRFSS) is a health-related telephone survey that is collected annually by the CDC. Each year, the survey collects responses from over 400,000 Americans on health-related risk behaviors, chronic health conditions, and the use of preventative services. It has been conducted every year since 1984. For this project, a csv of the dataset available on Kaggle for the year 2015 was used. This original dataset contains responses from 441,455 individuals and has 330 features. These features are either questions directly asked of participants, or calculated variables based on individual participant responses."
 
-The csv file is located in the root directory of the project (`diabetes.csv`)
+The csv file with 5000 rows of data is located in the root directory of the project (`diabetes_5000.csv`)
 
 #### Grupa 3
 Piotr Farbowski  
