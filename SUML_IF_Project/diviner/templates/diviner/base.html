@@ -1,55 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'diviner/style.css' %}">
         <title>Diviner</title>
-        <style>
-            table {
-              font-family: arial, sans-serif;
-              border-collapse: collapse;
-              width: 100%;
-            }
-            
-            td, th {
-              border: 1px solid #dddddd;
-              text-align: left;
-              padding: 8px;
-            }
-            
-            tr:nth-child(even) {
-              background-color: #dddddd;
-            }
-
-            .topnav a {
-                float: left;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-
-            .topnav {
-                overflow: hidden;
-            }
-
-            small {
-                float: left;
-                font-size: 12px;
-                color: #808080;
-            }
-        </style>
+        <header>
+            <h1><a href="{% url 'home' %}">Diabetes Diviner</a></h1>
+        </header>
     </head>
 
-    <body>
-        <h1><a href="{% url 'home' %}">Diabetes Diviner</a></h1>
-        <hr>
-        <div class="topnav">
-            <a href="{% url 'upload_form' %}">Upload data to the model (CSV file)</a>
-            <a href="{% url 'add_diabetes' %}">Upload data to the model (Diabetic form)</a>   
-            <a href="{% url 'train' %}">Train model</a>
-            <a href="{% url 'diabetic_prediction' %}">Diabetic prediction</a>
-        </div>
-        <hr>
-        <br>
+    <body>       
+        <nav>
+         <ul>  
+           <li>
+                {% url 'upload_form' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Upload data to the model (CSV file)</a>
+          </li>
+           <li> 
+                {% url 'add_diabetes' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Upload data to the model (Diabetic form)</a>
+          </li>
+           <li> 
+                {% url 'train' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Train model</a>
+          </li>
+           <li>
+                {% url 'diabetic_prediction' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Diabetic prediction</a>
+          </li>
+        </ul>
+        </nav>      
         {% block content %}{% endblock content %}
     </body>
+    <footer>
+        Piotr Farbowski, Tomasz Iwanowski
+    </footer>
 </html>

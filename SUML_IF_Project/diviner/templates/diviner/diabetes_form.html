@@ -1,9 +1,8 @@
 {% extends "diviner/base.html" %}
-
 {% block content %}
 <div>
         <h3 class="headtext">Add diabetic data:</h3>
-        <form action="" method="POST">{% csrf_token %}
+        <form action="" class='form' method="POST">{% csrf_token %}
             <p>Sick: {{ form.sick }}</p>
             <small>0 = no diabetes 1 = diabetes</small><br>
             <p>Sex: {{ form.sex }}</p>

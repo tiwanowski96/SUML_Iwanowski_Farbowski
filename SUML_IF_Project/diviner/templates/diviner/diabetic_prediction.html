@@ -2,7 +2,7 @@
 
 {% block content %}
 <div>
-    <p style='color: red'>Make sure you have trained the model before proceeding with the prediction!</p><br>
+    <p style='color: red'>Make sure you have trained the model before proceeding with the prediction!</p>
     <h3 class="headtext">Add patient's data for prediction:</h3>
     <form action="" method="POST">{% csrf_token %}
         <p>Sex: {{ form.sex }}</p>
@@ -30,7 +30,7 @@
         <small>Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good? scale 1-30 days</small><br>
         <p>Education: {{ form.education }}</p>
 
-        <br>{{ form.errors }}<br>
+        {{ form.errors }}<br>
         <input class="toggle" type="submit" value="&nbsp;Submit&nbsp;">
     </form>
 </div>
