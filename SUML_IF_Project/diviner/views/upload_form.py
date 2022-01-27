@@ -21,10 +21,9 @@ def upload_form(request):
     if request.method == "POST":
         csv_file = request.FILES['file']
 
-        # TODO validation
-        # if not csv_file.name.endswith('.csv'):
-        #     return HttpResponse('THIS IS NOT A CSV FILE')
-        # else:
+        if not csv_file.name.endswith('.csv'):
+            return render(request, 'diviner/non-valid_csv.html')
+
         data_set = csv_file.read().decode('UTF-8')
 
         io_string = io.StringIO(data_set)
