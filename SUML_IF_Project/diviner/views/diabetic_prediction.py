@@ -91,7 +91,10 @@ class DiabeticPredictionView(View):
 
             diabetic.save()
 
-            return redirect(f'/diviner/diabetic/{diabetic.id}', {'test': 'test1'})
+            # TODO
+            request.session['proba'] = str(prediction_proba)
+
+            return redirect(f'/diviner/diabetic/{diabetic.id}')
 
         else:
             return render(request, 'diviner/diabetic_prediction.html', ctx)
@@ -109,6 +112,11 @@ class DiabeticPredictionView(View):
 
     def prepare_test_data(self, request):
         '''Preparation of test data based on the csv file'''
+        try:
+            f = open("diabetes.csv")
+        except IOError:
+            return render(request, 'diviner/model_empty.html')
+
         all_entries = pd.read_csv('diabetes.csv')
         all_entries.columns
         cols = [
