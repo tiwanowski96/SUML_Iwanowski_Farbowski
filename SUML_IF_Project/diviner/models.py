@@ -115,6 +115,10 @@ class Diabetes(models.Model):
             MaxValueValidator(6)
         ]
     )
+    prediction_proba = models.CharField(
+        null=True,
+        max_length=128
+    )
 
     def __str__(self):
         return self.sick

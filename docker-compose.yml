@@ -7,6 +7,10 @@ services:
       MYENV: EXAMPLE
     volumes:
       - .:/code
+  web_makemigrations:
+    extends:
+      service: web
+    command: python SUML_IF_Project/manage.py makemigrations
   web_migrate:
     extends:
       service: web

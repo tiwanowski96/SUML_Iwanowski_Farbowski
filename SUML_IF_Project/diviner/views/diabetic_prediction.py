@@ -87,14 +87,11 @@ class DiabeticPredictionView(View):
                 general_health_feeling=request.POST.get('general_health_feeling'),
                 mental_health_feeling=request.POST.get('mental_health_feeling'),
                 physical_health_feeling=request.POST.get('physical_health_feeling'),
-                education=request.POST.get('education')
+                education=request.POST.get('education'),
+                prediction_proba=prediction_proba
             )
 
             diabetic.save()
-
-            # TODO
-            request.session['proba'] = str(prediction_proba)
-
             return redirect(f'/diviner/diabetic/{diabetic.id}')
 
         else:

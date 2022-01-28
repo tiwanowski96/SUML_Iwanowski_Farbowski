@@ -1,8 +1,10 @@
 {% extends "diviner/base.html" %}
 
 {% block content %}
+    <h1>{{ctx}}</h1>
     <h3>Prediction:</h3>
-    <h4 style='color: red'>Sick: {{ diabetic.sick }}</h4><br>
+    <h4 style='color: red'>Sick: {{ diabetic.sick }}</h4>
+    <h4>Prediction Proba: {{ diabetic.prediction_proba }}</h4><br>
     <p>Sex: {{ diabetic.sex }}</p>
     <p>Age: {{ diabetic.age }}</p>
     <p>Blood preasure: {{ diabetic.high_blood_preasure }}</p>
