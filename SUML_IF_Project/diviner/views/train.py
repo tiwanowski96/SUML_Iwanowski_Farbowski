@@ -48,7 +48,7 @@ class DiabeticTrainView(View):
         choice = max(choices)
 
         if choice == y1_score:
-            model = forest
+            model = forest    
         elif choice == y2_score:
             model = lreg
         else:
@@ -62,6 +62,14 @@ class DiabeticTrainView(View):
         
         filename = "model.sv"
         pickle.dump(model, open(filename,'wb'))
+
+        try:
+            f = open("forest_model.sv")
+            os.remove("forest_model.sv")
+        except IOError:
+            print("File not accessible")
+        filename = "forest_model.sv"
+        pickle.dump(forest, open(filename,'wb'))
 
         ctx = {
             'forest': "Las: {0}".format(forest.score(X_train,y_train)),
@@ -129,3 +137,5 @@ class DiabeticTrainView(View):
         # print("Drzewa decyzyjne: {0}".format(tree.score(X_train,y_train)) )
 
         return forest, lreg, tree
+
+
