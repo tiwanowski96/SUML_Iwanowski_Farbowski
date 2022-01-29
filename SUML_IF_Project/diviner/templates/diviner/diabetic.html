@@ -4,7 +4,10 @@
     <h1>{{ctx}}</h1>
     <h3>Prediction:</h3>
     <h4 style='color: red'>Sick: {{ diabetic.sick }}</h4>
-    <h4>Prediction Proba: {{ diabetic.prediction_proba }}</h4><br>
+    <h4>Prediction proba "Fasle": {{ diabetic.prediction_proba_0 }}</h4>
+    <h4>Prediction proba "True": {{ diabetic.prediction_proba_1 }}</h4><br>
+    <h4>The predictions for the patient below show that the probability of avoiding diabetes is {{ diabetic.prediction_proba_0 }} 
+        and the probability of developing diabetes is {{ diabetic.prediction_proba_1 }}.</h4><br>
     <p>Sex: {{ diabetic.sex }}</p>
     <p>Age: {{ diabetic.age }}</p>
     <p>Blood preasure: {{ diabetic.high_blood_preasure }}</p>

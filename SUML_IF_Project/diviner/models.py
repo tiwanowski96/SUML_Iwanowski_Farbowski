@@ -115,7 +115,12 @@ class Diabetes(models.Model):
             MaxValueValidator(6)
         ]
     )
-    prediction_proba = models.CharField(
+    prediction_proba_0 = models.CharField(
+        null=True,
+        max_length=128
+    )
+
+    prediction_proba_1 = models.CharField(
         null=True,
         max_length=128
     )

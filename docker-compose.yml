@@ -10,11 +10,11 @@ services:
   web_makemigrations:
     extends:
       service: web
-    command: python SUML_IF_Project/manage.py makemigrations
+    command: python SUML_IF_Project/manage.py makemigrations --no-input
   web_migrate:
     extends:
       service: web
-    command: python SUML_IF_Project/manage.py migrate
+    command: python SUML_IF_Project/manage.py migrate --no-input
   web_run:
     extends:
       service: web

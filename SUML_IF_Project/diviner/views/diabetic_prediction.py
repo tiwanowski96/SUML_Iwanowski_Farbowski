@@ -68,7 +68,10 @@ class DiabeticPredictionView(View):
             prediction = imported_model.predict(data)
             print(f'prediction {prediction[0]}')
             prediction_proba = imported_model.predict_proba(data)
-            print(f'prediction_proba {prediction_proba}')
+            # probability of 0
+            prediction_proba_0 = "{0:.0f}%".format(prediction_proba[0][0] * 100)
+            # probability of 1
+            prediction_proba_1 = "{0:.0f}%".format(prediction_proba[0][1] * 100)
 
             # Create new object of Diabetes model
             diabetic = Diabetes(
@@ -88,7 +91,8 @@ class DiabeticPredictionView(View):
                 mental_health_feeling=request.POST.get('mental_health_feeling'),
                 physical_health_feeling=request.POST.get('physical_health_feeling'),
                 education=request.POST.get('education'),
-                prediction_proba=prediction_proba
+                prediction_proba_0=prediction_proba_0, # probability of 0
+                prediction_proba_1=prediction_proba_1 # probability of 1
             )
 
             diabetic.save()
