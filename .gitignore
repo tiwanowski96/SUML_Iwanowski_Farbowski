@@ -118,8 +118,11 @@ celerybeat.pid
 diabetes.csv
 diabetic.csv
 model.sv
+forest_model.sv
 plot.png
 SUML_IF_Project\diviner\static\diviner\plot.png
+SUML_IF_Project/diviner/static/diviner/variable_dependency.png
+SUML_IF_Project/diviner2.sqlite3
 
 # Environments
 .env

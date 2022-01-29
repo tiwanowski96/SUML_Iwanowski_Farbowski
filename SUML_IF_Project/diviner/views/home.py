@@ -64,6 +64,3 @@ class HomeView(View):
             return variable_dependency_png
         except IOError:
             return        
-    
-
-
