@@ -1,0 +1,31 @@
+{% extends "diviner/base.html" %}
+
+{% block content %}
+    <h3>User guide</h3>
+        <ul>
+            <li>
+                It is possible to add a csv file with patient data.
+                Go to <a href="{% url 'upload_form' %}">Upload data to the model (CSV file)</a>
+            </li>
+            <li>
+                It is possible to add the patient data using patient form.
+                Go to <a href="{% url 'add_diabetes' %}">Upload data to the model (Diabetic form)</a>
+            </li>
+            <li>
+                By switching to the <a href="{% url 'train' %}">Train model</a> view,
+                the application creates new models each time based on the objects in the Diabetes table.<br>
+                Before using prediction, update the model for a better result.
+            </li>
+            <li>
+                Predict the likelihood of a patient suffering from diabetes, based on the available data.<br>
+                Go to <a href="{% url 'diabetic_prediction' %}">Diabetic prediction</a>.
+            </li>
+        </ul>
+    <br>
+        <h3>Diabetes plots</h3>
+        {% load static %}
+        <img src="{% static 'diviner/plot.png' %}" alt="sick plot">
+        <img src="{% static 'diviner/variable_dependency.png' %}" alt="variable plot">
+        
+    
+{% endblock content %}

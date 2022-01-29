@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'diviner/style.css' %}">
+        <title>Diviner</title>
+        <header>
+            <h1><a href="{% url 'home' %}">Diabetes Diviner</a></h1>
+        </header>
+    </head>
+
+    <body>       
+        <nav>
+         <ul>  
+           <li>
+                {% url 'upload_form' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Upload data to the model (CSV file)</a>
+          </li>
+           <li> 
+                {% url 'add_diabetes' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Upload data to the model (Diabetic form)</a>
+          </li>
+           <li> 
+                {% url 'train' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Train model</a>
+          </li>
+           <li>
+                {% url 'diabetic_prediction' as url %}
+                <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Diabetic prediction</a>
+          </li>
+        </ul>
+        </nav>      
+        {% block content %}{% endblock content %}
+        <br>
+    </body>
+    <footer>
+        Piotr Farbowski, Tomasz Iwanowski
+    </footer>
+</html>

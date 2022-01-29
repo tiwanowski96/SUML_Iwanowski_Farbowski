@@ -1,0 +1,26 @@
+{% extends "diviner/base.html" %}
+
+{% block content %}
+    <h1>{{ctx}}</h1>
+    <h3>Prediction:</h3>
+    <h4 style='color: red'>Sick: {{ diabetic.sick }}</h4>
+    <h4>Prediction proba "Fasle": {{ diabetic.prediction_proba_0 }}</h4>
+    <h4>Prediction proba "True": {{ diabetic.prediction_proba_1 }}</h4><br>
+    <h4>The predictions for the patient below show that the probability of avoiding diabetes is {{ diabetic.prediction_proba_0 }} 
+        and the probability of developing diabetes is {{ diabetic.prediction_proba_1 }}.</h4><br>
+    <p>Sex: {{ diabetic.sex }}</p>
+    <p>Age: {{ diabetic.age }}</p>
+    <p>Blood preasure: {{ diabetic.high_blood_preasure }}</p>
+    <p>Cholesterol: {{ diabetic.cholesterol }}</p>
+    <p>BMI: {{ diabetic.bmi }}</p>
+    <p>Smoker: {{ diabetic.smoker }}</p>
+    <p>Stroke: {{ diabetic.stroke }}</p>
+    <p>Heart disease or attack: {{ diabetic.heart_disease_or_attack }}</p>
+    <p>Physical activity: {{ diabetic.physical_activity }}</p>
+    <p>Heavy alcohol consumption: {{ diabetic.heavy_alcohol_consumption }}</p>
+    <p>Healthcare: {{ diabetic.healthcare }}</p>
+    <p>General health feeling: {{ diabetic.general_health_feeling }}</p>
+    <p>Mental health feeling: {{ diabetic.mental_health_feeling }}</p>
+    <p>Physical health feeling: {{ diabetic.physical_health_feeling }}</p>
+    <p>Education: {{ diabetic.education }}</p>
+{% endblock content %}

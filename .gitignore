@@ -58,6 +58,7 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
+diviner.sqlite3
 db.sqlite3
 db.sqlite3-journal
 
@@ -111,14 +112,29 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+/data
+
+# Application files
+diabetes.csv
+diabetic.csv
+model.sv
+forest_model.sv
+plot.png
+SUML_IF_Project\diviner\static\diviner\plot.png
+SUML_IF_Project/diviner/static/diviner/variable_dependency.png
+SUML_IF_Project/diviner2.sqlite3
+
 # Environments
 .env
 .venv
 env/
 venv/
 ENV/
+PF_develop/
 env.bak/
 venv.bak/
+.test_PF
+test_PF/
 
 # Spyder project settings
 .spyderproject
